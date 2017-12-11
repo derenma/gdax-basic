@@ -199,3 +199,6 @@ class Client(object):
 
         def update(self, market):
 ```
+
+# Oh yeah.  Because Crypto.
+![](https://media.giphy.com/media/7EY1y7VE3kgqA/giphy.gif)
