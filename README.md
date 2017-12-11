@@ -29,6 +29,7 @@ gdax.accounts.get()
 ### Normalizing Floats
 ```
 normalizedCoin = tools.normalizeCOIN("0.0000000000000000") # Returns "0.00000000"
+normalizedUsd = tools.normalizeUSD("0.0000000000000000") # Returns "0.00"
 ```
 #### ProTip
 If you don't know if a variable needs to be normalized, just fucking normalize it.
