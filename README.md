@@ -4,7 +4,7 @@
 ![](https://imgur.com/vp24Vr4.gif)
 
 ## Authors Note
-If you don't know python, there are some good hints here.  If you do, ignore.  (In my private repo version) This code was designed to be multithreaded, so I maintain the same theme in this non-module based code.  To skirt arount API query limits, everything is based around minimizing API calls.  (I believe the limit is still a burst of 6 calls per-second but can get as high as 50 before rate limiting actually hits....)  So, logic being, all account queries are buffered in the class variables.  Query once, act hundreds of times.  Across all threads.
+If you don't know python, there are some good hints here.  If you do, ignore.  (In my private repo version) This code was designed to be multithreaded so I maintain the same theme in this non-module based code.  To skirt arount API query limits everything is based around minimizing API calls.  (I believe the limit is still a burst of 6 calls per-second but can get as high as 50 before rate limiting actually hits....)  So, logic being, all account queries are buffered in the class variables.  Query once, act hundreds of times.  Across all threads.
 
 ## Tools and Logging
 ```
