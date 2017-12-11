@@ -1,12 +1,10 @@
-''' General tools '''
+
 class Tools(object):
-    ''' Log handler '''
     def __init__(self):
     def logInit(self):
     def normalizeUSD(self, USD):
     def normalizeCOIN(self, coin):
 
-''' Main Client Stuffs '''
 class Client(object):
     def __init__(self, log, tools, passphrase=None, apiKey=None, apiSecret=None):
         self.log = self.logInit()
