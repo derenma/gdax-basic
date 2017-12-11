@@ -30,20 +30,23 @@ gdax.accounts.get()
 ```
 normalizedCoin = tools.normalizeCOIN("0.0000000000000000") # Returns "0.00000000"
 ```
-ProTip: If you don't know if a variable needs to be normalized, just fucking normalize it.
-        If you don't know if a variable is a float type, just fucking make it a float.
+#### ProTip
+If you don't know if a variable needs to be normalized, just fucking normalize it.
+If you don't know if a variable is a float type, just fucking make it a float.
 
-        GDAX loves to give back 20x place floats, but will bork if you try and send one back
-        to its API.  Fuck you GDAX.
-        This is ESPECIALLY useful after math:
-            buyQuantity = tools.normalizeCOIN(float(buyQuantity) - float(errorMargin))
+GDAX loves to give back 20x place floats, but will bork if you try and send one back
+to its API.  Fuck you GDAX.
+        
+#### This is ESPECIALLY useful after math:
+```   
+buyQuantity = tools.normalizeCOIN(float(buyQuantity) - float(errorMargin))
+```
+Normalization WILL round up.  This can cause a trade to fail if you attempt to
+execute a trade that consumes 100% of your funds.
 
-        Normalization WILL round up.  This can cause a trade to fail if you attempt to
-        execute a trade that consumes 100% of your funds.
+float() your variables during math ALWAYS.
 
-        float() your variables during math ALWAYS.
-
-        You want to pass a str back to API ALWAYS.
+You want to pass a str back to API ALWAYS.
 
 ### Basic trading and validation
 #### Sell Example Basic
