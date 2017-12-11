@@ -3,6 +3,9 @@
 ## Obligitory cat gif
 ![](https://imgur.com/vp24Vr4.gif)
 
+## Authors Note
+If you don't know python, there are some good hints here.  If you do, ignore.
+
 ## Tools and Logging
 ```
 tools = Tools()
