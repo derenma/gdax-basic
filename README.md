@@ -1,5 +1,9 @@
 # Demo Stuff
 
+## Obligitory cat gif
+[![ohshitohshitohshit](https://imgur.com/vp24Vr4)](https://imgur.com/vp24Vr4)
+
+
 ## Tools and Logging
 ```
 tools = Tools()
