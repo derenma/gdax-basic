@@ -13,10 +13,13 @@ gdax = Client(log, tools, passphrase="", apiKey="", apiSecret="")
 
 
 ## Class and subclass access example
+```
 gdax.trade.buy(..)
 gdax.trade.sell(..)
 gdax.table.update("BTC-ETH")
 gdax.accounts.get()
+# Etc, etc...
+```
 
 ## Currency and floating points
 
