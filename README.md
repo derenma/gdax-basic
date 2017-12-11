@@ -135,6 +135,14 @@ print "--------------------------------- Nice Logging"
 log.debug("Logging is Cute!")
 ```
 
+# You can't tell me what to do.
+Want to call back to the API directly?  Init your client, then leverage Client().authClient for direct API calls.
+Read more here: https://docs.gdax.com/
+```
+gdax = Client(log, tools, passphrase="", apiKey="", apiSecret="")
+orderInfo = gdax.authClient.get_order("mi_tradeId")
+```
+
 # Class Structure
 ```
 class Tools(object):
@@ -145,7 +153,12 @@ class Tools(object):
 
 class Client(object):
     def __init__(self, log, tools, passphrase=None, apiKey=None, apiSecret=None):
-        self.log = self.logInit()
+        self.authClient = ''
+        self.log = log
+        self.tools = tools
+        self.passphrase = passphrase
+        self.apiKey = apiKey
+        self.apiSecret = apiSecret
     def getOrders(self):
     def getOrder(self, tradeId):
     def getFills(self):
@@ -153,12 +166,6 @@ class Client(object):
 
     class Trade(object):
         def __init__(self, outer):
-            self.authClient = ''
-            self.log = log
-            self.tools = tools
-            self.passphrase = passphrase
-            self.apiKey = apiKey
-            self.apiSecret = apiSecret
         def sell(self, sellPrice, qty, market):
         def buy(self, buyPrice, qty, market):
         def status(self, tradeId):
