@@ -1,5 +1,14 @@
 # Demo Stuff
 
+## Obligitory cat gif
+![](https://imgur.com/vp24Vr4.gif)
+
+## Authors Note
+If you don't know python, there are some good hints here.  If you do, ignore.  (In my private repo version) This code was designed to be multithreaded so I maintain the same theme in this non-module based code.  To skirt arount API query limits everything is based around minimizing API calls.  (I believe the limit is still a burst of 6 calls per-second but can get as high as 50 before rate limiting actually hits....)  So, logic being, all account queries are buffered in the class variables.  Query once, act hundreds of times.  Across all threads.
+
+### Spelling and grammars.
+All spelling and gramatical mistakes are intentional.  I can haz chezburger.
+
 ## Tools and Logging
 ```
 tools = Tools()
@@ -26,21 +35,25 @@ gdax.accounts.get()
 ### Normalizing Floats
 ```
 normalizedCoin = tools.normalizeCOIN("0.0000000000000000") # Returns "0.00000000"
+normalizedUsd = tools.normalizeUSD("0.0000000000000000") # Returns "0.00"
 ```
-ProTip: If you don't know if a variable needs to be normalized, just fucking normalize it.
-        If you don't know if a variable is a float type, just fucking make it a float.
+#### ProTip
+If you don't know if a variable needs to be normalized, just fucking normalize it.
+If you don't know if a variable is a float type, just fucking make it a float.
 
-        GDAX loves to give back 20x place floats, but will bork if you try and send one back
-        to its API.  Fuck you GDAX.
-        This is ESPECIALLY useful after math:
-            buyQuantity = tools.normalizeCOIN(float(buyQuantity) - float(errorMargin))
+GDAX loves to give back 20x place floats, but will bork if you try and send one back
+to its API.  Fuck you GDAX.
+        
+#### This is ESPECIALLY useful after math:
+```   
+buyQuantity = tools.normalizeCOIN(float(buyQuantity) - float(errorMargin))
+```
+Normalization WILL round up.  This can cause a trade to fail if you attempt to
+execute a trade that consumes 100% of your funds.
 
-        Normalization WILL round up.  This can cause a trade to fail if you attempt to
-        execute a trade that consumes 100% of your funds.
+float() your variables during math ALWAYS.
 
-        float() your variables during math ALWAYS.
-
-        You want to pass a str back to API ALWAYS.
+You want to pass a str back to API ALWAYS.
 
 ### Basic trading and validation
 #### Sell Example Basic
@@ -196,3 +209,6 @@ class Client(object):
 
         def update(self, market):
 ```
+
+# Oh yeah.  Because Crypto.
+![](https://media.giphy.com/media/7EY1y7VE3kgqA/giphy.gif)
